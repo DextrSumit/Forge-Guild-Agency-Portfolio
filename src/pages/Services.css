@@ -1,0 +1,318 @@
+/* ── Spider-Man Services (Capabilities) ──────────────────────────────── */
+.capabilities-page {
+  padding-top: 120px;
+  padding-bottom: 96px;
+}
+
+.capabilities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.capabilities-item {
+  background: rgba(17, 22, 48, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.capabilities-item:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 24px rgba(196, 30, 58, 0.2);
+  border-color: rgba(196, 30, 58, 0.5);
+}
+
+.capabilities-item--open {
+  border-color: #C41E3A;
+  box-shadow: 0 4px 24px rgba(196, 30, 58, 0.2);
+}
+
+.capabilities-item__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+  background: transparent;
+  color: #F0F4FF;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.capabilities-item__trigger:hover {
+  background: rgba(196, 30, 58, 0.05);
+}
+
+.capabilities-item__trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.capabilities-item__index {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: #C41E3A;
+}
+
+.capabilities-item__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #F0F4FF;
+}
+
+.capabilities-item__chevron {
+  font-size: 24px;
+  color: #C41E3A;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.capabilities-item__chevron--open {
+  transform: rotate(180deg);
+}
+
+.capabilities-item__body {
+  padding: 0 32px 32px 80px;
+}
+
+.capabilities-item__summary {
+  font-size: 16px;
+  color: #8892B0;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.capabilities-item__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.capabilities-item__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #CCD6F6;
+}
+
+.capabilities-item__feature-arrow {
+  color: #C41E3A;
+  font-family: var(--font-mono);
+}
+
+/* ── Protocol Timeline ────────────────────────────────────── */
+.protocol-timeline {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  margin-left: 12px;
+  padding-left: 24px;
+}
+
+.protocol-node {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.protocol-node::before {
+  content: '';
+  position: absolute;
+  left: -29px;
+  top: 16px;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.protocol-node.active::before {
+  background: #C41E3A;
+  box-shadow: 0 0 12px #C41E3A;
+}
+
+.protocol-node__content {
+  background: rgba(17, 22, 48, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.protocol-node__content:hover {
+  transform: translateX(8px);
+  border-color: rgba(196, 30, 58, 0.3);
+}
+
+.protocol-node.active .protocol-node__content {
+  border-color: #C41E3A;
+  background: rgba(196, 30, 58, 0.08);
+  transform: translateX(12px);
+}
+
+.protocol-node__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.protocol-node__num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #C41E3A;
+}
+
+.protocol-node__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #F0F4FF;
+}
+
+.protocol-node__chevron {
+  margin-left: auto;
+  color: #8892B0;
+}
+
+.protocol-node__detail {
+  padding-top: 16px;
+  font-size: 14px;
+  color: #8892B0;
+  line-height: 1.6;
+}
+
+/* ── Valuation Grid ───────────────────────────────────────── */
+.valuation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.valuation-card {
+  background: rgba(17, 22, 48, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.valuation-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(196, 30, 58, 0.2);
+  border-color: rgba(196, 30, 58, 0.4);
+}
+
+.valuation-card--highlight {
+  border-color: #C41E3A;
+  background: linear-gradient(180deg, rgba(196, 30, 58, 0.1) 0%, rgba(17, 22, 48, 0.8) 100%);
+}
+
+.valuation-card--highlight:hover {
+  border-color: #C41E3A;
+  box-shadow: 0 24px 48px rgba(196, 30, 58, 0.25);
+}
+
+.valuation-card__tags {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.valuation-card__name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #F0F4FF;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.valuation-card__subtitle {
+  font-size: 14px;
+  color: #8892B0;
+  margin-bottom: 32px;
+}
+
+.valuation-card__divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 32px;
+}
+
+.valuation-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+.valuation-card__item {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: #CCD6F6;
+}
+
+.valuation-card__check {
+  color: #C41E3A;
+  font-weight: bold;
+}
+
+.valuation-card__pricing-note {
+  font-size: 12px;
+  color: #8892B0;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.valuation-card__cta {
+  width: 100%;
+  justify-content: center;
+}
+
+.valuation-note {
+  text-align: center;
+  font-size: 14px;
+  color: #8892B0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Overrides for Theme Match ────────────────────────────── */
+.capabilities-page .section-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.capabilities-page .section-label {
+  color: #C41E3A;
+}
+.capabilities-page .section-label::before {
+  background: #C41E3A;
+}
+
+.capabilities-page .tag--cobalt {
+  border-color: #C41E3A;
+  color: #C41E3A;
+  background: rgba(196, 30, 58, 0.1);
+}
+
+.capabilities-page .tag--bronze {
+  border-color: #1A56DB;
+  color: #1A56DB;
+  background: rgba(26, 86, 219, 0.1);
+}

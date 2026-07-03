@@ -1,0 +1,329 @@
+/* ── Spider-Man Projects Archive ──────────────────────────────────────── */
+.archive-page {
+  padding-top: 120px;
+  padding-bottom: 96px;
+}
+
+.archive-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.archive-filter {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: #8892B0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.archive-filter:hover {
+  border-color: #C41E3A;
+  color: #C41E3A;
+}
+
+.archive-filter--active {
+  background: #C41E3A;
+  color: #FFFFFF;
+  border-color: #C41E3A;
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.archive-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-card__visual {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: rgba(17, 22, 48, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.archive-card__visual:hover {
+  border-color: #C41E3A;
+}
+
+.archive-card__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.archive-card__visual:hover .archive-card__thumb {
+  transform: scale(1.05);
+}
+
+.archive-card__visual-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.archive-card__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.archive-card__placeholder-icon {
+  font-size: 32px;
+}
+
+.archive-card__visual-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.archive-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 44, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border: 2px solid var(--overlay-color);
+  border-radius: 8px;
+}
+
+.archive-card__visual:hover .archive-card__overlay {
+  opacity: 1;
+}
+
+.archive-card__overlay-cta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  background: var(--overlay-color);
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+.archive-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.archive-card__discipline {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.archive-card__year {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #8892B0;
+}
+
+.archive-card__title {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: #F0F4FF;
+  margin-bottom: 8px;
+}
+
+.archive-card__desc {
+  font-size: 14px;
+  color: #8892B0;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.archive-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.archive-card__footer {
+  margin-top: auto;
+}
+
+.archive-card__view-cta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #C41E3A;
+  letter-spacing: 0.05em;
+}
+
+/* ── Modal ─────────────────────────────────────────────────── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 14, 44, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal {
+  background: #111630;
+  border: 1px solid rgba(196, 30, 58, 0.3);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(196, 30, 58, 0.1);
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 20px;
+  color: #CCD6F6;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.modal__close:hover {
+  color: #FFFFFF;
+  background: #C41E3A;
+  border-color: #C41E3A;
+}
+
+.modal__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: rgba(10, 14, 44, 0.8);
+}
+
+.modal__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__video-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.modal__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal__media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.modal__media-icon {
+  font-size: 48px;
+}
+
+.modal__media-hint {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #8892B0;
+}
+
+.modal__body {
+  padding: 48px;
+}
+
+.modal__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.modal__discipline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 6px 12px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.modal__year {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: #8892B0;
+}
+
+.modal__title {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 700;
+  color: #F0F4FF;
+  margin-bottom: 16px;
+}
+
+.modal__desc {
+  font-size: 16px;
+  color: #8892B0;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.modal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.modal__cta {
+  display: inline-flex;
+}

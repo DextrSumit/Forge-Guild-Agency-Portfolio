@@ -1,0 +1,109 @@
+========================================================================
+HAPPY FORGE GUILD - THEME & CUSTOMIZATION GUIDE
+========================================================================
+
+If you want to inject your own personality and brand identity into the site
+to make it feel less "cookie-cutter" and more unique to you, here is your 
+guide on exactly what files control the design, how to change them, and 
+where to find high-end inspiration.
+
+------------------------------------------------------------------------
+1. WHERE TO FIND TOP-TIER INSPIRATION
+------------------------------------------------------------------------
+To get away from standard "template" designs, look at galleries that curate 
+highly custom, award-winning sites:
+
+* Godly Website (https://godly.website/): The absolute best place for 
+  tech-minimalist, dark-mode, and highly animated website inspiration.
+* Awwwards (https://www.awwwards.com/): Look at the "Site of the Day" 
+  winners for cutting-edge layouts and typography.
+* Dark Mode Design (https://www.darkmodedesign.com/): A curated gallery 
+  specifically for beautifully executed dark mode websites.
+* Curated.design (https://www.curated.design/): Great for seeing different 
+  color palettes and component layouts.
+
+
+------------------------------------------------------------------------
+2. WHICH FILES CONTROL WHAT?
+------------------------------------------------------------------------
+
+🎨 COLORS & GLOBAL SPACING
+File: src/index.css
+
+At the very top of this file is the :root block. This is the heart of your 
+design system. If you change a color here, it updates across the entire 
+site instantly.
+
+Example from the file:
+:root {
+  --obsidian:   #09090B;  /* Main background */
+  --platinum:   #FAFAFA;  /* Main text */
+  --steel:      #71717A;  /* Subtitles / muted text */
+  --cobalt:     #2563EB;  /* Primary Accent color */
+}
+
+
+🔤 FONTS & TYPOGRAPHY
+Files: index.html AND src/index.css
+
+1. To get new fonts: Go to Google Fonts (https://fonts.google.com/), 
+   select your fonts, and copy the <link> tags.
+2. Paste those <link> tags into the <head> section of your index.html.
+3. Go to src/index.css and update the font variables in the :root block:
+   
+   --font-mono: 'Your New Font', monospace;
+   --font-sans: 'Your New Font', sans-serif;
+
+(Tip: For a more brutalist/tech vibe, try fonts like Space Grotesk, Syne, 
+or Clash Display. For ultra-clean premium, try Inter, Manrope, or 
+Plus Jakarta Sans).
+
+
+✨ ANIMATIONS & INTERACTIONS
+Files: Any .jsx file (e.g., src/pages/Index.jsx, src/pages/Archive.jsx)
+
+Your site uses two different animation libraries:
+
+* Page scrolls and fade-ins (Framer Motion): Look for <motion.div> tags 
+  in the JSX. You can tweak how things slide in by changing the 'y' 
+  (vertical movement), 'duration', and 'delay':
+  
+  <motion.div
+    initial={{ opacity: 0, y: 30 }} /* Starts invisible, 30px down */
+    whileInView={{ opacity: 1, y: 0 }} /* Animates to original position */
+    transition={{ duration: 0.5, delay: 0.2 }} /* Speed and timing */
+  >
+
+* The typing headline effect (GSAP): This specific effect is located at 
+  the top of src/pages/Index.jsx inside the useEffect block. You can change 
+  the speed by tweaking duration: 0.4 or stagger: 0.025.
+
+
+📝 LAYOUTS, TEXT, AND STRUCTURE
+Files: The individual .jsx files in src/pages/
+
+If you want to move the "Stats" section below the "Capabilities" section, 
+or if you want to rewrite the text on the page, you do that directly in 
+the relevant page component (e.g., src/pages/Index.jsx).
+
+
+📐 SPECIFIC COMPONENT STYLES
+Files: The individual .css files (e.g., Index.css, Archive.css)
+
+If you want to change how rounded the project cards are, or the thickness 
+of borders, look in the specific CSS file for that page and modify 
+properties like border-radius (make it 0px for a sharp, edgy look, or 
+16px for a soft, friendly look).
+
+
+------------------------------------------------------------------------
+3. HOW TO START CUSTOMIZING RIGHT NOW:
+------------------------------------------------------------------------
+1. Keep your dev server running (npm run dev).
+2. Open src/index.css and try changing --cobalt: #2563EB; to an electric 
+   green (#00FF00) or a deep red (#DC2626). Save the file and watch the 
+   site instantly change.
+3. Go to src/pages/Index.jsx and rewrite the paragraph text under the 
+   main headline.
+4. Browse one of the inspiration sites above, find a vibe you like, and 
+   start tweaking your CSS variables to match!
