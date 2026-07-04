@@ -718,11 +718,11 @@
   /* Hero */
   .hero {
     min-height: 100svh;
-    padding-top: 100px;
+    padding-top: 160px;
   }
 
   .hero__content {
-    padding-top: 0;
+    padding-top: 20px;
     padding-bottom: 60px;
   }
 
@@ -760,20 +760,35 @@
 
   /* Workflow Carousel */
   .workflow-carousel-container {
-    height: 400px;
+    height: 480px;
     width: 100%;
     overflow: hidden;
   }
   
   .workflow-card {
     width: 280px;
-    height: 380px;
+    height: 440px;
+    padding: 16px;
   }
   
+  .workflow-card__inner {
+    padding: 24px 16px;
+  }
+  
+  .workflow-card__title {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  
+  .workflow-card__desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
   .workflow-card__img {
     width: 120px;
     height: 120px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
   
   .workflow-card--prev, .workflow-card--next {
@@ -790,6 +805,10 @@
   }
 
   /* Solutions */
+  .solution-item {
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
   .solution-item-inner {
     flex-direction: column;
     align-items: flex-start;

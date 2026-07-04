@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import './OurTeam.css'
 import imgAditya from '../assets/aditya.jpg'
+import coverImg from '../assets/cover.jpg'
 
 const FOUNDERS = [
   {
@@ -100,21 +101,45 @@ function AnimatedAvatar({ avatar, name, accentFrom }) {
 export default function OurTeam() {
   return (
     <div className="structure-page">
-      <section className="section">
+      {/* Cover Banner */}
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ 
+            position: 'relative',
+            width: '100%', 
+            minHeight: '280px', 
+            borderRadius: '16px', 
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            padding: '40px 24px'
+          }}
+        >
+          {/* Background Image with Overlay */}
+          <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+            <img src={coverImg} alt="Cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'rgba(10, 14, 44, 0.7)' }}></div>
+          </div>
+
+          {/* Text Content */}
+          <div style={{ position: 'relative', zIndex: 1, maxWidth: '800px' }}>
+            <h1 className="section-title" style={{ margin: '8px 0' }}>Meet Our Team</h1>
+          </div>
+        </motion.div>
+      </div>
+
+      <section className="section" style={{ paddingTop: '64px' }}>
         <div className="container">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="section-label">OUR TEAM</div>
-            <h1 className="section-title">Meet Our Team</h1>
-            <p className="section-sub" style={{ marginBottom: 64 }}>
-              Three specialists with complementary expertise — creativity, engineering,
-              and operations working in lockstep to deliver precision-first results.
-            </p>
-          </motion.div>
+          <p className="section-sub" style={{ maxWidth: '100%', marginBottom: '64px', fontSize: '1.2rem', textAlign: 'center' }}>
+            Three specialists with complementary expertise — creativity, engineering,
+            and operations working in lockstep to deliver precision-first results.
+          </p>
 
           {/* Founder Cards */}
           <div className="structure-founders">
@@ -179,7 +204,7 @@ export default function OurTeam() {
 /* ── Founder Card with Flip ────────────────────────────────── */
 function FounderCard({ founder, index }) {
   const [isFlipped, setIsFlipped] = useState(false)
-  const { name, avatar, role, title, tag, accentFrom, bio, skills, focus } = founder
+  const { name, avatar, role, tag, accentFrom, bio, skills, focus } = founder
 
   return (
     <motion.div

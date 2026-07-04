@@ -1,7 +1,13 @@
 /* ── Spider-Man Services (Capabilities) ──────────────────────────────── */
 .capabilities-page {
-  padding-top: 120px;
+  padding-top: 80px;
   padding-bottom: 96px;
+}
+
+@media (max-width: 768px) {
+  .capabilities-page {
+    padding-top: 64px;
+  }
 }
 
 .capabilities-list {

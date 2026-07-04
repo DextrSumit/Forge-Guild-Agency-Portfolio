@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import faqsSvgUrl from '../assets/FAQs.svg'
 import './ContactUs.css'
+import coverImg from '../assets/cover.jpg'
 
 /* ================================================================
    CONFIGURATION
@@ -109,21 +110,45 @@ export default function ContactUs() {
 
   return (
     <div className="dispatch-page">
-      <section className="section">
+      {/* Cover Banner */}
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ 
+            position: 'relative',
+            width: '100%', 
+            minHeight: '280px', 
+            borderRadius: '16px', 
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            padding: '40px 24px'
+          }}
+        >
+          {/* Background Image with Overlay */}
+          <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+            <img src={coverImg} alt="Cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'rgba(10, 14, 44, 0.7)' }}></div>
+          </div>
+
+          {/* Text Content */}
+          <div style={{ position: 'relative', zIndex: 1, maxWidth: '800px' }}>
+            <h1 className="section-title" style={{ margin: '8px 0' }}>Initiate Contact</h1>
+          </div>
+        </motion.div>
+      </div>
+
+      <section className="section" style={{ paddingTop: '64px' }}>
         <div className="container">
-          {/* ── Header ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="section-label">CONTACT US</div>
-            <h1 className="section-title">Initiate Contact</h1>
-            <p className="section-sub" style={{ marginBottom: 64 }}>
-              Two channels to reach us. Choose whichever you prefer —
-              we respond within 24 hours on all lines.
-            </p>
-          </motion.div>
+          <p className="section-sub" style={{ maxWidth: '100%', marginBottom: '64px', fontSize: '1.2rem', textAlign: 'center' }}>
+            Two channels to reach us. Choose whichever you prefer —
+            we respond within 24 hours on all lines.
+          </p>
 
           <div className="dispatch-layout">
             {/* ── Left: Channels ── */}

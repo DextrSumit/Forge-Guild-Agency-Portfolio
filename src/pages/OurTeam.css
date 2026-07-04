@@ -1,7 +1,13 @@
 /* ── Spider-Man Our Team (Structure) ────────────────────────────────── */
 .structure-page {
-  padding-top: 120px;
+  padding-top: 80px;
   padding-bottom: 96px;
+}
+
+@media (max-width: 768px) {
+  .structure-page {
+    padding-top: 64px;
+  }
 }
 
 .structure-founders {
@@ -218,8 +224,14 @@
 }
 
 @media (max-width: 768px) {
+  .structure-founders {
+    grid-template-columns: 1fr;
+  }
   .structure-founder-card-flipper {
-    height: 500px;
+    height: 620px;
+  }
+  .structure-founder-card {
+    padding: 24px;
   }
   .structure-founder-card__body {
     flex-direction: column;

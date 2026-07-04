@@ -1,7 +1,13 @@
 /* ── Spider-Man Contact Us (Dispatch) ────────────────────────────────── */
 .dispatch-page {
-  padding-top: 120px;
+  padding-top: 80px;
   padding-bottom: 96px;
+}
+
+@media (max-width: 768px) {
+  .dispatch-page {
+    padding-top: 64px;
+  }
 }
 
 .dispatch-layout {
