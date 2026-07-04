@@ -8,7 +8,7 @@ import coverImg from '../assets/cover.jpg'
    CONFIGURATION
    ================================================================ */
 const WEB3FORMS_ACCESS_KEY = 'a19067f0-80f1-4797-ae7d-87e4ee467536'
-const WHATSAPP_NUMBER      = '917827485763'
+const WHATSAPP_NUMBER      = '919997956287'
 const CAL_URL              = 'https://cal.com/forgeguild/15min'
 
 /* ================================================================
